@@ -41,6 +41,12 @@ object ThreadModelLimitations extends App {
   // deadlocks, livelocks
 
   /**
+    * Hence we would need a data structure
+    *  --- Fully encapsulated
+    *  --- with no locks
+    */
+
+  /**
     * DR #2: delegating something to a thread is a PAIN.
     */
 
