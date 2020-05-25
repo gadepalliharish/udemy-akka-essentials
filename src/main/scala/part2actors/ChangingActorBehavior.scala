@@ -76,6 +76,7 @@ object ChangingActorBehavior extends App {
   val mom = system.actorOf(Props[Mom])
 
   mom ! MomStart(statelessFussyKid)
+  mom ! MomStart(fussyKid)
 
   /*
     mom receives MomStart
@@ -139,8 +140,8 @@ object ChangingActorBehavior extends App {
   import Counter._
   val counter = system.actorOf(Props[Counter], "myCounter")
 
-  (1 to 5).foreach(_ => counter ! Increment)
   (1 to 3).foreach(_ => counter ! Decrement)
+  (1 to 5).foreach(_ => counter ! Increment)
   counter ! Print
 
   /**

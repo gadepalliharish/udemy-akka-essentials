@@ -142,6 +142,8 @@ object ActorCapabilities extends App {
     case class LiveTheLife(account: ActorRef)
   }
 
+  case class PrintMessage(content:String)
+
   class Person extends Actor {
     import Person._
     import BankAccount._
@@ -152,7 +154,7 @@ object ActorCapabilities extends App {
         account ! Withdraw(90000)
         account ! Withdraw(500)
         account ! Statement
-      case message => println(message.toString)
+      case message => println(message)
     }
   }
 
@@ -160,5 +162,13 @@ object ActorCapabilities extends App {
   val person = system.actorOf(Props[Person], "billionaire")
 
   person ! LiveTheLife(account)
-
+  person ! PrintMessage("this is a test")
+  person ! "this is a test 2 "
+  class TestActorS extends Actor {
+    override def receive: Receive = {
+      case message => println(message)
+    }
+  }
+  val testActorS = system.actorOf(Props[TestActorS], "TestActorS")
+  testActorS ! "[TestActorS]:= this is a test 2 "
 }

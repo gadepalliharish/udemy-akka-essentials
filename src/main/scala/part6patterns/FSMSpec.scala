@@ -6,7 +6,7 @@ import org.scalatest.{BeforeAndAfterAll, OneInstancePerTest, WordSpecLike}
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
-
+import scala.language.postfixOps
 class FSMSpec extends TestKit(ActorSystem("FSMSpec"))
   with ImplicitSender with WordSpecLike with BeforeAndAfterAll with OneInstancePerTest {
 

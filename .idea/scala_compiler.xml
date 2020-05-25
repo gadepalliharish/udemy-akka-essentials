@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="akka-essentials,udemy-akka-essentials" />
+    <profile name="sbt 1" modules="akka-essentials" />
+    <profile name="sbt 2" modules="udemy-akka-essentials">
+      <option name="postfixOps" value="true" />
+      <plugins>
+        <plugin path="$USER_HOME$/.ivy2/cache/com.artima.supersafe/supersafe_2.13.2/jars/supersafe_2.13.2-1.1.10.jar" />
+      </plugins>
+    </profile>
   </component>
 </project>

@@ -1,6 +1,6 @@
 package part6patterns
 
-import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, Props}
+import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
 import akka.testkit.{ImplicitSender, TestKit}
 import akka.util.Timeout
 import org.scalatest.{BeforeAndAfterAll, WordSpecLike}
@@ -10,9 +10,9 @@ import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 
 // step 1 - import the ask pattern
-import akka.pattern.ask
-import akka.pattern.pipe
+import akka.pattern.{ask, pipe}
 
+import scala.language.postfixOps
 class AskSpec extends TestKit(ActorSystem("AskSpec"))
   with ImplicitSender with WordSpecLike with BeforeAndAfterAll {
 
